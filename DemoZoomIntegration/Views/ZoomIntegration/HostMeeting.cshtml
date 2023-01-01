@@ -1,25 +1,4 @@
-﻿@*
-@{
-    ViewData["Title"] = "HostMeeting";
-    var id = ViewBag.HostUrl;
-}
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <iframe src="@id" allowtransparency="true" style="width:60vw; height:70vh">
-                    </iframe>
-                </div>
-            </div>
-        </div>
-    </div>
-    
-</div>*@
-@*<a href="@id" , target="_self" class="btn btn-primary"> Host Meeting</a>*@
-
-
-@model DemoZoomIntegration.Models.MeetingModel
+﻿@model DemoZoomIntegration.Models.MeetingModel
 @{
     ViewData["Title"] = "HostMeeting";
     var id = ViewBag.JoinUrl;
@@ -126,9 +105,9 @@
 @*<script type="text/javascript" src="component-view.js"></script> *@
 <script>
     
-    //$(document).ready(function () {
-        console.log("checkSystemRequirements");
-        console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
+    
+        //console.log("checkSystemRequirements");
+        //console.log(JSON.stringify(ZoomMtg.checkSystemRequirements()));
         ZoomMtg.setZoomJSLib('https://source.zoom.us/2.9.5/lib', '/av')
 
         ZoomMtg.preLoadWasm();
@@ -141,7 +120,7 @@
         var leaveUrl = 'https://localhost:7288/';
         var sdkKey = 'MaDOA4PkoxzybFiwRzuoQtTIGIoLtrVymwR5'; //sdk key
 
-    //});
+    
 
     function startMeeting(signature, meetingNumber, userName, userEmail, passWord, registrantToken) {
         debugger;
@@ -178,5 +157,9 @@
     }
 
 </script>
+@*<script type="text/javascript" src="~/zoomsdk/client-view.js"></script>*@
+<!-- For Component View -->
+<!-- <script src="https://source.zoom.us/2.9.5/zoom-meeting-embedded-2.9.5.min.js"></script> -->
+<!-- <script type="text/javascript" src="component-view.js"></script> -->
 </html>
 
