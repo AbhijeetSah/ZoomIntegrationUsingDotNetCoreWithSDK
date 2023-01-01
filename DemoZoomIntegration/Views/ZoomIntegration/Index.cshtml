@@ -1,0 +1,27 @@
+﻿@model DemoZoomIntegration.Models.ZoomIntegrationModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h2>
+    Meeting Id : @Model.MeetingId
+</h2>
+<h2>PassCode : @Model.EncryptedPwd</h2>
+
+<h2>Host URL</h2>
+<a href="/ZoomIntegration/HostMeeting?MeetingId=@Model.MeetingId&EncryptedPwd=@Model.EncryptedPwd" target="_blank" class="btn btn-primary">Host Meeting</a>
+@*<a href="/ZoomIntegration/HostMeeting?url=@Model.Host" target="_blank" class="btn btn-success"> Host Meeting</a>*@
+<br />
+<span>@Model.Host</span>
+
+
+<h2>Join URL</h2>
+<a href="/ZoomIntegration/JoinMeeting?MeetingId=@Model.MeetingId&EncryptedPwd=@Model.EncryptedPwd" target="_blank" class="btn btn-primary">Join Meeting</a>
+@*<a href="/ZoomIntegration/JoinMeeting?url=@Model.Join" target="_blank" class="btn btn-primary">
+    Join Meeting
+</a><br />*@
+<span>@Model.Join</span>
+
+<h2>Response Code</h2>    
+<span>@Model.Code</span>
